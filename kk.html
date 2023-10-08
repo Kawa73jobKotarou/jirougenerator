@@ -1,0 +1,42 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- シンプルCSS -->
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+        <title>Vote</title>
+    </head>
+    <body>
+        <header>
+            <h1>投票機能</h1>
+        </header>
+        <main>
+            <!-- <section>
+                <h3>カウント機能</h3>
+
+            </section> -->
+            <section>
+                <h3>投票してください！</h3>
+                <div class="ap_flex">
+                    <div>
+                        <form method="post">
+                            <input type="submit" name="A" value="商品A">
+                        </form>
+                        <p><?= @$count_a ?? 0 ?></p>
+                    </div>
+                    <div>
+                        <form method="post">
+                            <input type="submit" name="B" value="商品B">
+                        </form>
+                        <p><?= @$count_b ?? 0 ?></p>
+                    </div>
+                </div>
+            </section>
+            <section></section>
+        </main>
+        <footer>
+            <p>Copyright <a href="https://apice.biz/">Apice</a> CORPORATION. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
