@@ -5,38 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- シンプルCSS -->
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
-        <title>Vote</title>
+        <link rel="stylesheet" href="style.css">
+        <title>ラーメン次郎シュミレーター</title>
     </head>
     <body>
         <header>
-            <h1>投票機能</h1>
+            <h1>ラーメン次郎シュミレーター</h1>
         </header>
         <main>
-            <!-- <section>
-                <h3>カウント機能</h3>
-
-            </section> -->
             <section>
-                <h3>投票してください！</h3>
-                <div class="ap_flex">
+                <p>変換したい画像を入力してください</p>
+                <form action="test.html" method="post" enctype="multipart/form-data" >
+                    <input type="file" name="test" required>
+                    <input type="submit" value="送信する">
+                </form>
+            </section>
+            <section>
+                <div class="flex">
                     <div>
-                        <form method="post">
-                            <input type="submit" name="A" value="商品A">
-                        </form>
-                        <p><?= @$count_a ?? 0 ?></p>
+                        <p>変換前の画像</p>
+                        <img src="ramen.jpg">
                     </div>
                     <div>
-                        <form method="post">
-                            <input type="submit" name="B" value="商品B">
-                        </form>
-                        <p><?= @$count_b ?? 0 ?></p>
+                        <p>次郎化して画像</p>
+                        <img src="jirou.jpg">
                     </div>
                 </div>
             </section>
-            <section></section>
         </main>
         <footer>
-            <p>Copyright <a href="https://apice.biz/">Apice</a> CORPORATION. All Rights Reserved.</p>
+            <p>ラーメン次郎最高！</p>
         </footer>
     </body>
 </html>
