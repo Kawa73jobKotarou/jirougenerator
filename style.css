@@ -1,0 +1,85 @@
+h1{
+    color: red;
+}
+header{
+    background-color: #ffff1a !important;
+}
+body{
+    background-color: #fcfc8b;
+}
+.usukiiro{
+    background-color: #fcfc8b;
+}
+.generate_box{
+    background-color: #ffff1a;
+}
+.generate_box p{
+    color: red;
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+}
+.ramen-images>div{
+    width: 50%;
+    border: solid 1px black;
+    padding: 5px;
+}
+.ramen-images>div>p{
+    text-align: center;
+}
+.ramen-images>div>img{
+    width: 100%;
+}
+.anti{
+    background-color: black;
+    color: red;
+}
+.anti header{
+    background-color: black;
+    color: #fff;
+}
+.anti .ramen-images>div{
+    width: 50%;
+    border: solid 1px #fff;
+    padding: 5px;
+}
+footer.anti p{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.anti_button{
+    background: black;
+    color: red !important;
+    text-decoration: none !important;
+    padding: 1rem;
+    border: solid 3px red;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.anti_button:hover{
+    background: red;
+    color: black !important;
+    padding: 1rem;
+    border: solid 3px black;
+
+}
+
+.jirou_button{
+    text-decoration: none !important;
+    background: #ffff1a;
+    padding: 1rem;
+    border: solid 3px red;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red !important;
+}
+.jirou_button:hover{
+    background: red;
+    border: solid 3px #ffff1a;
+    color: #ffff1a !important;
+}

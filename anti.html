@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- シンプルCSS -->
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+        <link rel="stylesheet" href="style.css">
+        <title>ラーメン二郎ジェネレーター</title>
+    </head>
+    <body class="anti">
+        <header>
+            <h1>二郎の写真も見たくない！！！</h1>
+        </header>
+        <main>
+            <section>
+                <p>変換したい二郎を入力してください</p>
+                <form name="fm" action="/cgi-bin/anti.py" method="post" enctype="multipart/form-data" accept=".jpg, .jpeg, .png, .JPEG">
+                    <input  class="anti" type="file" id="imagefile" name="origin_image">
+                    <input type="submit" value="成敗する">
+                </form>
+            </section>
+            <section>
+                <div class="flex ramen-images" id="makeImg">
+                    <div>
+                        <p>変換前の二郎</p>
+                        <img id="orgImg" src="img/no_image.png" alt="Original Image">
+                    </div>
+                    <div>
+                        <p>変換した画像</p>
+                        <img id="rsltImg" src="img/no_image.png" alt="Result Image">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="anti">
+            <a class="jirou_button" href="index.html">二郎ジェネレータ</a>
+            <p>二郎なんてもう食べない！</p>
+        </footer>
+
+
+        <script type="text/javascript">
+            var elem = document.getElementById("orgImg");
+            document.getElementById("imagefile").addEventListener("change", function(event) {
+                var elem = document.getElementById("orgImg");  // elemをここで定義
+                event.preventDefault();  // フォームの送信を防止
+                var fileList = event.target.files;  // event.targetからファイルを取得
+                if (fileList.length > 0) {
+                    var blobUrl = window.URL.createObjectURL(fileList[0]);
+                    elem.src = blobUrl;
+                    console.log(blobUrl);
+                } else {
+                    elem.src = "img/no_image.png";
+                }
+            });
+
+        </script>
+
+
+    </body>
+</html>
