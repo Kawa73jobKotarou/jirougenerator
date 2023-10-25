@@ -111,6 +111,7 @@ try:
     import random
     from PIL import Image
     import matplotlib.pyplot as plt
+    import pdb
     load_size = 256 # オリジナルの画像はこのサイズにリサイズ
     fine_size = 256  # 286x286の画像からランダムに256x256をcrop
     batch_size = 2
@@ -477,7 +478,9 @@ try:
         def load_network(self, network, network_label, epoch_label):
             load_filename = '%s_net_%s.pth' % (epoch_label, network_label)
             load_path = os.path.join(self.log_dir, load_filename)
+            load_path = 'cgi-bin/'+load_path
             network.load_state_dict(torch.load(load_path))
+
 
         def save(self, label):
             self.save_network(self.netG_A, 'G_A', label)

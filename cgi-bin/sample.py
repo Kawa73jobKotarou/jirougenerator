@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw
 import io
 import os
 import sys
+import pdb
 Forms = cgi.FieldStorage()
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding = 'utf-8')        #printで出力する内容をutf-8にする
 print('Content-Type: text/html; charset=UTF-8\n')   
@@ -70,6 +71,7 @@ Text = """
 """
 noimage_path="img/no_image.png"
 try:
+
     # 画像の読み込み
     origin_image = Forms['origin_image']
     # 画像データを取得
@@ -477,6 +479,7 @@ try:
         def load_network(self, network, network_label, epoch_label):
             load_filename = '%s_net_%s.pth' % (epoch_label, network_label)
             load_path = os.path.join(self.log_dir, load_filename)
+            load_path = 'cgi-bin/'+load_path
             network.load_state_dict(torch.load(load_path))
 
         def save(self, label):
@@ -492,19 +495,27 @@ try:
             # self.load_network(self.netD_B, 'D_B', label)
 
     model = CycleGAN()
-    model.load('epoch50')
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
+    model.load('epoch50')
+    
+
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    print(0)
     image = image.convert('RGB')
+    print(0)
 
     image = transform(image).unsqueeze(0)
+    print(0)
 
     # モデルに画像を渡して変換を行う
     fake_A = model.netG_B.cpu()(image)
+    print(1)
 
     fake_A = (fake_A + 1) / 2  # 画像のピクセル値を[0, 1]の範囲にスケーリング
+    print(1)
 
     image = fake_A[0].detach()
+    print(1)
 
     image=transforms.ToPILImage()(image)
 
